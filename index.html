@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tara | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<style>
+/* --- Fonts & Reset --- */
+body, html {margin:0; padding:0; font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222;}
+a {text-decoration:none; color:#222;}
+header {display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100;}
+.lang-toggle {cursor:pointer; padding:5px 12px; border-radius:8px; background:#d43f5f; color:#fff; font-weight:600; transition:0.3s;}
+.lang-toggle:hover {background:#ff8dbb;}
+main {padding:40px; max-width:1000px; margin:auto;}
+section {margin-bottom:60px;}
+h1,h2 {margin-bottom:20px; text-align:center;}
+img.profile {width:150px; height:150px; border-radius:50%; display:block; margin:20px auto; object-fit:cover;}
+
+/* --- Text Cards --- */
+.text-card {background:#fff; padding:25px 30px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.12); margin:20px auto; max-width:900px; transition: transform 0.3s, box-shadow 0.3s;}
+.text-card:hover {transform:translateY(-5px); box-shadow:0 12px 35px rgba(212,63,95,0.3);}
+.text-card p {line-height:1.8; letter-spacing:0.5px; font-size:17px;}
+
+/* --- Skills --- */
+.skills {display:flex; flex-wrap:wrap; gap:20px; justify-content:center;}
+.skill-circle {width:120px; height:120px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:600; color:#fff; cursor:pointer; background:linear-gradient(135deg,#d43f5f,#5dade2); box-shadow:0 8px 20px rgba(0,0,0,0.2); transition:transform 0.4s, box-shadow 0.4s, background 0.4s;}
+.skill-circle:hover {transform:scale(1.3) rotate(-10deg); box-shadow:0 12px 35px rgba(212,63,95,0.7); background:linear-gradient(135deg,#ff8dbb,#7bdff2);}
+#skill-desc {margin-top:25px;font-weight:600;text-align:center; max-width:800px; line-height:1.6;}
+
+/* --- Contact --- */
+#contact {padding:50px 20px;text-align:center;}
+.contact-links {margin-bottom:20px;}
+.contact-links a {margin:0 10px; font-weight:600;}
+.contact-form {display:flex; flex-direction:column; gap:15px; max-width:400px; margin:auto;}
+.contact-form input, .contact-form textarea {padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:16px; font-weight:500; width:100%;}
+.contact-form input:focus, .contact-form textarea:focus {border-color:#d43f5f; box-shadow:0 0 8px rgba(212,63,95,0.5); outline:none;}
+.contact-form button {padding:12px; border:none; border-radius:8px; font-size:16px; font-weight:600; background:linear-gradient(135deg,#d43f5f,#5dade2); color:#fff; cursor:pointer; transition:0.3s;}
+.contact-form button:hover {transform:scale(1.05); background:linear-gradient(135deg,#ff8dbb,#7bdff2);}
+#particles-js {position:fixed; width:100%; height:100%; top:0; left:0; z-index:-1;}
+</style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+<div class="lang-toggle" onclick="toggleLangAll()">فارسی / EN</div>
+
+<header>
+  <div><strong>Tara</strong></div>
+</header>
+
+<main>
+  <!-- Home -->
+  <section id="home">
+    <img src="profile.jpg" alt="Tara Profile" class="profile">
+    <div class="text-card">
+      <h1 id="home-title-fa">تارا</h1>
+      <h1 id="home-title-en" style="display:none;">Tara</h1>
+      <p id="home-text-fa">ذهنی بی‌قرار، میان منطق و خیال. نمی‌سازم برای نظم، می‌سازم برای <strong>جرقه</strong> — همون لحظه‌ای که یه فکر ساده زنده میشه. جایی میان سکوت و صدا، دنبال معنا می‌گردم... و هر بار، یه چیز تازه کشف می‌کنم.</p>
+      <p id="home-text-en" style="display:none;">A restless mind, wandering between logic and imagination. I don’t build for order — I build for the <strong>spark</strong>, that moment when an idea starts breathing. Somewhere between silence and noise, I keep chasing meaning — and every time, I find something new.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="text-card">
+      <h2 id="about-title-fa">درباره من</h2>
+      <h2 id="about-title-en" style="display:none;">About Me</h2>
+      <p id="about-text-fa">من برنامه‌نویسم، ولی فقط دنبال کد تمیز نیستم. دنبال لحظه‌ای‌ام که منطق با خیال قاطی میشه، جایی که عددها و احساسات کنار هم نفس می‌کشن. گاهی می‌سازم، گاهی خراب می‌کنم — ولی همیشه در حال خلقم. ذهنم ساکت نمیشه، چون هنوز هزار تا جرقه برای کشف کردن داره.</p>
+      <p id="about-text-en" style="display:none;">I’m a developer, but I’m not after perfect code. I’m after that moment when logic meets imagination — when numbers and emotions start breathing together. Sometimes I build, sometimes I break, but I’m always creating. My mind never rests — there are still a thousand sparks left to chase.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 id="skills-title-fa">مهارت‌ها</h2>
+    <h2 id="skills-title-en" style="display:none;">Skills</h2>
+    <div class="skills">
+      <div class="skill-circle" data-desc-fa="جایی که منطق با خیال ملاقات می‌کنه و ایده‌ها زنده میشن" data-desc-en="Where logic meets imagination and ideas come alive">C#</div>
+      <div class="skill-circle" data-desc-fa="فریم‌ورکی که ساختن چیزهای پیچیده رو ساده می‌کنه" data-desc-en="Framework that makes complex things simple">.NET</div>
+      <div class="skill-circle" data-desc-fa="ذخیره و بازیابی داده‌ها" data-desc-en="Storing and retrieving data">SQL Server</div>
+      <div class="skill-circle" data-desc-fa="کنترل نسخه؛ هر تغییر یه داستانه" data-desc-en="Version control; every change tells a story">Git</div>
+      <div class="skill-circle" data-desc-fa="ابزارهای نظم و خلاقیت" data-desc-en="Tools for organization and creativity">Microsoft Office</div>
+      <div class="skill-circle" data-desc-fa="کشف دنیای APIها" data-desc-en="Exploring the world of APIs">Postman</div>
+      <div class="skill-circle" data-desc-fa="تفکر خلاق و حل مسئله" data-desc-en="Creative thinking and problem solving">Creative Thinking</div>
+      <div class="skill-circle" data-desc-fa="مدیریت زمان و پروژه‌ها" data-desc-en="Time & project management">Time Management</div>
+      <div class="skill-circle" data-desc-fa="تحلیل عمیق و منطقی" data-desc-en="Critical & analytical thinking">Critical Thinking</div>
+    </div>
+    <p id="skill-desc"></p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 id="contact-title-fa">ارتباط</h2>
+    <h2 id="contact-title-en" style="display:none;">Contact</h2>
+    <div class="contact-links">
+      <a href="https://github.com/Tarashafieyan" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/Tarashafieyan" target="_blank">LinkedIn</a>
+      <a href="mailto:Tarashafieyan33@gmail.com">Email</a>
+    </div>
+    <form class="contact-form" action="https://formsubmit.co/Tarashafieyan33@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <div id="message-status"></div>
+  </section>
+</main>
+
+<script>
+// Toggle language
+let isFA = true;
+function toggleLangAll(){
+  isFA = !isFA;
+  const faElements = document.querySelectorAll('[id$="-fa"]');
+  const enElements = document.querySelectorAll('[id$="-en"]');
+  faElements.forEach(el=>el.style.display=isFA?'block':'none');
+  enElements.forEach(el=>el.style.display=isFA?'none':'block');
+}
+
+// Skill description on hover
+const skillCircles = document.querySelectorAll('.skill-circle');
+const skillDesc = document.getElementById('skill-desc');
+skillCircles.forEach(circle=>{
+  circle.addEventListener('mouseenter',()=>{skillDesc.innerText=isFA?circle.dataset.descFa:circle.dataset.descEn;});
+  circle.addEventListener('mouseleave',()=>{skillDesc.innerText='';});
+});
+
+// Particles.js
+particlesJS("particles-js", {
+  "particles": {
+    "number": {"value":80,"density":{"enable":true,"value_area":800}},
+    "color":{"value":"#d43f5f"},
+    "shape":{"type":"circle"},
+    "opacity":{"value":0.5},
+    "size":{"value":3},
+    "line_linked":{"enable":true,"distance":150,"color":"#d43f5f","opacity":0.4,"width":1},
+    "move":{"enable":true,"speed":3}
+  },
+  "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"}}}
+});
+</script>
+
+</body>
+</html>
